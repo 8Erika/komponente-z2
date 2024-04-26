@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ClassComponent from "./component/classComponent/ClassComponent";
+import FunctionComp from "./component/functionComp/FunctionComp";
+
+const users = [
+  { name: "Ivana", age: 35 },
+  { name: "Ivan", age: 18 },
+  { name: "Matej", age: 38 },
+  { name: "Luka", age: 20 },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {users.map((user, index) => (
+        <div>
+          <FunctionComp name={user.name} age={user.age} />
+          <ClassComponent name={user.name} age={user.age} />
+        </div>
+      ))}
     </div>
   );
 }
-
 export default App;
