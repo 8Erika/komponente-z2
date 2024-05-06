@@ -1,24 +1,27 @@
 import "./App.css";
-import ClassComponent from "./component/classComponent/ClassComponent";
-import FunctionComp from "./component/functionComp/FunctionComp";
-
-const users = [
-  { name: "Ivana", age: 35 },
-  { name: "Ivan", age: 18 },
-  { name: "Matej", age: 38 },
-  { name: "Luka", age: 20 },
-];
+import FunctionCompFirst from "./component/functionCompFirst/FunctionCompFirst";
+import FunctionCompSecond from "./component/functionCompSecond/FunctionCompSecond";
+import ClassComponentFirst from "./component/classComponentFirst/ClassComponentFirst";
+import ClassComponentSecond from "./component/classComponentSecond/ClassComponentSecond";
 
 function App() {
+  const users = [
+    { name: "Ivana", age: 35 },
+    { name: "Ivan", age: 18 },
+    { name: "Matej", age: 38 },
+    { name: "Luka", age: 20 },
+  ];
+
   return (
     <div>
-      {users.map((user, index) => (
-        <div>
-          <FunctionComp name={user.name} age={user.age} />
-          <ClassComponent name={user.name} age={user.age} />
-        </div>
-      ))}
+      <FunctionCompFirst users={users[0]} />
+      <FunctionCompSecond users={users[1]} />
+      <ClassComponentFirst users={users[2]} />
+      <ClassComponentSecond users={users[3]} />
     </div>
   );
 }
+
+
+
 export default App;
